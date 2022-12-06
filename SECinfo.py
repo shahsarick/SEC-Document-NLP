@@ -2,7 +2,7 @@
 """
 Created on Tue Nov 01 08:06:25 2016
 
-@author: Sarick SHah
+@author: Sarick SHAH
 """
 import requests
 import os
