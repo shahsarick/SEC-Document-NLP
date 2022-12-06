@@ -11,9 +11,9 @@ os.chdir("C:\Users\Sarick\Documents\Python Scripts")
 import urllib2
 url = "http://www.secinfo.com/d14D5a.wMUmw.htm"
 response = urllib2.urlopen(url)
-main_doc = response.read()
+main_doc = response.read() #read the SEC info
 #%%
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup #import stuff
 soup = BeautifulSoup(main_doc,'html.parser')
 soup = soup.get_text()
 soup2 = soup.encode('utf-8').split('\n')
