@@ -13,6 +13,8 @@ url = "http://www.secinfo.com/d14D5a.wMUmw.htm"
 response = urllib2.urlopen(url)
 main_doc = response.read() #read the SEC info
 #%%
+
+#updated the code to now use comments on a new line
 from bs4 import BeautifulSoup #import stuff
 soup = BeautifulSoup(main_doc,'html.parser')
 soup = soup.get_text()
@@ -22,6 +24,9 @@ soup2 = soup.encode('utf-8').split('\n')
 Next step is to see if i can download all of them myself and save as text files!
 Then after that start NLP'ing that bitch
 '''
+
+
+
 #%%
 url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=318154&type=10-K%25&dateb=&owner=exclude&start=0&count=100"
 r = requests.get(url)
@@ -30,6 +35,7 @@ table = soup.find('table', 'tableFile2')
 linkList = table.find_all('a', id='documentsbutton')
 #%%
 
+#specifically looking for 10k's
 cik = "318154"
 filing_type = "10-K"
 start = "0"
